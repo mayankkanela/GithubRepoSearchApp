@@ -1,4 +1,4 @@
-package com.mayank.githubreposearchapp.data;
+package com.mayank.githubreposearchapp.data.repository;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -14,13 +14,13 @@ public class RepoEntity {
 
     private String description;
 
-    private int forks_count;
+    private String forks_count;
 
-    private int watchers_count;
+    private String watchers_count;
 
-    private  int stargazers_count;
+    private  String stargazers_count;
 
-    public RepoEntity(int item_id, String full_name, String owner, String description, int forks_count, int watchers_count, int stargazers_count) {
+    public RepoEntity(int item_id, String full_name, String owner, String description, String forks_count, String watchers_count, String stargazers_count) {
         this.item_id = item_id;
         this.full_name = full_name;
         this.owner = owner;
@@ -46,15 +46,15 @@ public class RepoEntity {
         return description;
     }
 
-    public int getForks_count() {
+    public String getForks_count() {
         return forks_count;
     }
 
-    public int getWatchers_count() {
+    public String getWatchers_count() {
         return watchers_count;
     }
 
-    public int getStargazers_count() {
+    public String getStargazers_count() {
         return stargazers_count;
     }
 }

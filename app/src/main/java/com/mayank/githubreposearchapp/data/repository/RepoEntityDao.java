@@ -1,4 +1,4 @@
-package com.mayank.githubreposearchapp.data;
+package com.mayank.githubreposearchapp.data.repository;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

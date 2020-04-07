@@ -1,9 +1,13 @@
-package com.mayank.githubreposearchapp.data;
+package com.mayank.githubreposearchapp.data.repository;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
+
+import com.mayank.githubreposearchapp.data.repository.RepoDatabase;
+import com.mayank.githubreposearchapp.data.repository.RepoEntity;
+import com.mayank.githubreposearchapp.data.repository.RepoEntityDao;
 
 import java.util.List;
 

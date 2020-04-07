@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    >
+    <TextView
+        android:id="@+id/tv_full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="full_name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        />
+    <TextView
+        android:id="@+id/tv_owner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="owner"
+        android:textSize="20sp"
+        android:textColor="#000"
+        />
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="description"
+        android:textSize="16sp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+      <com.google.android.material.chip.ChipGroup
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="24dp"
+          android:id="@+id/chip_group"
+          app:chipSpacingHorizontal="25dp">
+
+          <com.google.android.material.chip.Chip
+              android:id="@+id/watchers"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:chipIcon="@drawable/ic_watchers_black_24dp"/>
+          <com.google.android.material.chip.Chip
+              android:id="@+id/stars"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:chipIcon="@drawable/ic_star_black_24dp"/>
+
+          <com.google.android.material.chip.Chip
+              android:id="@+id/forks"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:chipIcon="@drawable/ic_fork_24dp"/>
+      </com.google.android.material.chip.ChipGroup>
+
+    </LinearLayout>
+
+</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
