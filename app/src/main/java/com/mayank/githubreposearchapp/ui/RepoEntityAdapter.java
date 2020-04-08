@@ -1,6 +1,10 @@
 package com.mayank.githubreposearchapp.ui;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +23,11 @@ import java.util.List;
 
 public class RepoEntityAdapter extends RecyclerView.Adapter<RepoEntityAdapter.RepoEntityHolder> {
     private List<RepoEntity> entities = new ArrayList<>();
+    private Context context;
     @NonNull
     @Override
     public RepoEntityHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        context = parent.getContext();
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_items, parent, false);
         return new RepoEntityHolder(itemView);
@@ -33,7 +39,8 @@ public class RepoEntityAdapter extends RecyclerView.Adapter<RepoEntityAdapter.Re
                 if(entity.getFull_name() != null && !TextUtils.isEmpty(entity.getFull_name()))
                 {
                     holder.fullName.setText(entity.getFull_name());
-                    holder.owner.setText(entity.getOwner());
+                    String a[] = entity.getFull_name().split("/");
+                    holder.owner.setText(a[0]);
                     holder.description.setText(entity.getDescription());
                     holder.watchers.setText(String.valueOf(entity.getWatchers_count()));
                     holder.stars.setText(String.valueOf(entity.getStargazers_count()));
@@ -71,6 +78,15 @@ public class RepoEntityAdapter extends RecyclerView.Adapter<RepoEntityAdapter.Re
             watchers = chipGroup.findViewById(R.id.watchers);
             stars = chipGroup.findViewById(R.id.stars);
             forks = chipGroup.findViewById(R.id.forks);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String url = entities.get(getAdapterPosition()).getUrl();
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    context.startActivity(browserIntent);
+
+                }
+            });
         }
     }
 }

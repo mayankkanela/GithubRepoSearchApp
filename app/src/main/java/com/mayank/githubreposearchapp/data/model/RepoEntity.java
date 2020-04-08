@@ -5,7 +5,6 @@ import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 
 @Entity(tableName = "repo_entity")
 public class RepoEntity {
@@ -32,8 +31,12 @@ public class RepoEntity {
     private  int stargazers_count;
 
 
+    @SerializedName("html_url")
+    private String url;
 
-    public RepoEntity(int item_id, String full_name, String owner, String description, int forks_count, int watchers_count, int stargazers_count) {
+
+
+    public RepoEntity(int item_id, String full_name, String owner, String description, int forks_count, int watchers_count, int stargazers_count, String url) {
         this.item_id = item_id;
         this.full_name = full_name;
         this.owner = owner;
@@ -41,6 +44,7 @@ public class RepoEntity {
         this.forks_count = forks_count;
         this.watchers_count = watchers_count;
         this.stargazers_count = stargazers_count;
+        this.url = url;
     }
 
     public int getItem_id() {
@@ -69,6 +73,10 @@ public class RepoEntity {
 
     public int getStargazers_count() {
         return stargazers_count;
+    }
+
+    public String getUrl() {
+        return url;
     }
 
 
