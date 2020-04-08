@@ -6,7 +6,9 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities =  {RepoEntity.class}, version = 1)
+import com.mayank.githubreposearchapp.data.model.RepoEntity;
+
+@Database(entities =  {RepoEntity.class}, version = 4, exportSchema = false)
 public abstract class RepoDatabase extends RoomDatabase {
     private static RepoDatabase instance;
 

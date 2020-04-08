@@ -5,9 +5,7 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.mayank.githubreposearchapp.data.repository.RepoDatabase;
-import com.mayank.githubreposearchapp.data.repository.RepoEntity;
-import com.mayank.githubreposearchapp.data.repository.RepoEntityDao;
+import com.mayank.githubreposearchapp.data.model.RepoEntity;
 
 import java.util.List;
 

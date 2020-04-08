@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.mayank.githubreposearchapp.data.repository.RepoEntity;
+import com.mayank.githubreposearchapp.data.model.RepoEntity;
 import com.mayank.githubreposearchapp.data.repository.RepoEntityRepository;
 
 import java.util.List;

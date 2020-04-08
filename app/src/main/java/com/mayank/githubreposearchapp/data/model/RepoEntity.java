@@ -1,26 +1,39 @@
-package com.mayank.githubreposearchapp.data.repository;
+package com.mayank.githubreposearchapp.data.model;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
 @Entity(tableName = "repo_entity")
 public class RepoEntity {
     @PrimaryKey
+    @SerializedName("id")
     private int  item_id;
 
+    @SerializedName("full_name")
     private  String full_name;
 
+    @SerializedName("login")
     private String owner;
 
+    @SerializedName("description")
     private String description;
 
-    private String forks_count;
+    @SerializedName("forks_count")
+    private int forks_count;
 
-    private String watchers_count;
+    @SerializedName("watchers_count")
+    private int watchers_count;
 
-    private  String stargazers_count;
+    @SerializedName("stargazers_count")
+    private  int stargazers_count;
 
-    public RepoEntity(int item_id, String full_name, String owner, String description, String forks_count, String watchers_count, String stargazers_count) {
+
+
+    public RepoEntity(int item_id, String full_name, String owner, String description, int forks_count, int watchers_count, int stargazers_count) {
         this.item_id = item_id;
         this.full_name = full_name;
         this.owner = owner;
@@ -46,15 +59,17 @@ public class RepoEntity {
         return description;
     }
 
-    public String getForks_count() {
+    public int getForks_count() {
         return forks_count;
     }
 
-    public String getWatchers_count() {
+    public int getWatchers_count() {
         return watchers_count;
     }
 
-    public String getStargazers_count() {
+    public int getStargazers_count() {
         return stargazers_count;
     }
+
+
 }

@@ -1,5 +1,6 @@
 package com.mayank.githubreposearchapp.ui;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.mayank.githubreposearchapp.R;
-import com.mayank.githubreposearchapp.data.repository.RepoEntity;
+import com.mayank.githubreposearchapp.data.model.RepoEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,14 +30,14 @@ public class RepoEntityAdapter extends RecyclerView.Adapter<RepoEntityAdapter.Re
     @Override
     public void onBindViewHolder(@NonNull RepoEntityHolder holder, int position) {
         RepoEntity entity = entities.get(position);
-                if(entity != null)
+                if(entity.getFull_name() != null && !TextUtils.isEmpty(entity.getFull_name()))
                 {
                     holder.fullName.setText(entity.getFull_name());
                     holder.owner.setText(entity.getOwner());
                     holder.description.setText(entity.getDescription());
-                    holder.watchers.setText(entity.getWatchers_count());
-                    holder.stars.setText(entity.getStargazers_count());
-                    holder.forks.setText(entity.getForks_count());
+                    holder.watchers.setText(String.valueOf(entity.getWatchers_count()));
+                    holder.stars.setText(String.valueOf(entity.getStargazers_count()));
+                    holder.forks.setText(String.valueOf(entity.getForks_count()));
 
                 }
     }
